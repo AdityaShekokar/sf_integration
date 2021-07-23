@@ -1,0 +1,4 @@
+django
+djangorestframework
+requests
+django-service-objects==0.7.0
