@@ -113,11 +113,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-SF_CLIENT_ID = "Add Your credential here"
-SF_CLIENT_SECRET = "Add Your credential here"
-SF_USERNAME = "Add Your credential here"
-SF_PASSWORD = "Add Your credential here"
-SF_BASE_URL = "Add Your credential here"
+SF_CLIENT_ID = "Add Your Consumer Key here"
+SF_CLIENT_SECRET = "dd Your Consumer Secret Key here"
+SF_USERNAME = "Add Your salesforce username here"
+SF_PASSWORD = "Add Your salesforce password here"
+SF_BASE_URL = "Add your salesforce base url here"  # for ex- https://adityatech4-dev-ed.my.salesforce.com/
 TLS_VERIFY = True
 
 REQUEST_CONFIG = {

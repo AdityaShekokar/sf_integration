@@ -166,32 +166,3 @@ class ContactListService(Service):
                 500,
                 message=f"Could not retrieve the contacts",
             )
-
-
-def str2bool(v):
-    return v.lower() in ("yes", "true", "y", "t", "1") if v else False
-
-
-class AccountServiceUtils:
-    __ACCOUNT_MODEL_PROJECTION = (
-        "Id, ParentId, Name, Phone, BillingAddress"
-    )
-
-    @classmethod
-    def get_account_model_projection(cls):
-        return cls.__ACCOUNT_MODEL_PROJECTION
-
-    @staticmethod
-    def get_account_search_query_url(te_user_id, scoping_tool_auth):
-        account_search_url = (
-                f"{SF_BASE_URL}{URI_API_SALESFORCE_Q}/?q="
-                f"SELECT Id, Account.Id from Contact where User_Id__c =" + te_user_id
-        )
-
-        if scoping_tool_auth:
-            scoping_condition = " AND Scoping_Tool_Authorized__c = " + str(
-                str2bool(scoping_tool_auth)
-            )
-            account_search_url += scoping_condition
-
-        return account_search_url
